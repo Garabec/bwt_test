@@ -1,0 +1,10 @@
+{
+    "name": "ubuntu/workspace",
+    "authors": [
+        {
+            "name": "Timofei",
+            "email": "dion26@yandex.ru"
+        }
+    ],
+    "require": {}
+}

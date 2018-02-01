@@ -12,4 +12,4 @@ define("CONFIG",ROOT.DS."config");
 require_once(CONFIG.DS."init.php");
 
 
-new WeatherController;
+(new App)->run($_SERVER["REQUEST_URI"]);

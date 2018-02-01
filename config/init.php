@@ -3,14 +3,12 @@
 
 
 
-function __autoload($classname){
+function autoload($classname){
     
   $Controller_class=CONTROLLER_DIR.DS.strtolower(str_replace("Controller","",$classname)).".controller.php";  
   $lib_class=LIB_DIR.DS.strtolower($classname).".class.php"; 
   $model_class=MODEL_DIR.DS.strtolower($classname).".php"; 
   
-  
-  var_dump($Controller_class);
   
   
   if(file_exists($Controller_class)){
@@ -29,5 +27,10 @@ function __autoload($classname){
     
 }
 
+require_once VENDOR_DIR.DS.'autoload.php';
+
+spl_autoload_register('autoload');
+
 
 require_once(ROOT."/config/config.php");
+

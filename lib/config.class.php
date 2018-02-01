@@ -7,7 +7,7 @@ class Config {
     
  public static function  set($key,$value) {
     
-    self::$setting[$key];
+    self::$setting[$key]=$value;
     
  }   
     

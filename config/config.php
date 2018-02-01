@@ -15,7 +15,7 @@ Config::set("Db_Connection",array(
      'host'=>'localhost',
      'db_name'=>'weather',
      'password'=>"",
-     'user'=>""
+     'user'=>"root"
     
      )); 
      

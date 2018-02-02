@@ -3,12 +3,7 @@
 
 Config::set("site_name","Weather");
 
-Config::set("layout", array(
-     
-     'default'=>"",
-     
-    
-       ));
+Config::set("layout", "default");
        
 Config::set("Db_Connection",array(
     
@@ -19,12 +14,12 @@ Config::set("Db_Connection",array(
     
      )); 
      
-Config::set("router",array(
+Config::set("routers",array(
 
-    "/weather"=>"weather/index",
-    "/weather/view"=>"/weather/view",
-    "/weather/message"=>"/weather/message",
-    "/weather/feedback"=>"/weather/feedback",
+    "weather"=>"weather/index",
+    "weather\/view"=>"weather/view",
+    "weather\/message"=>"weather/message",
+    "weather\/feedback"=>"weather/feedback",
 
  ));
  

@@ -4,27 +4,29 @@
 class App{
     
     
-    private $db;
-    private $routes;
-    private $url;
+    public static  $db;
+    public static  $router;
+    public static  $request;
     
-    public function __construct(){
-        
-        $this->db=new DB(Config::get("Db_Connection"));
-        $this->routes=Config::get("routes");
-        
-    }
     
-    public function run($url){
+  
+    
+    public static function run($url){
         
-        $this->url=$url;
-        
-        var_dump($this->url);
-        die;
-        
+        self::$db=new DB(Config::get("Db_Connection"));
+        self::$router=new Router($url);
+        self::$request=new Request;
         
         
-        
+        $controller=ucfirst(self::$router->getController())."Controller";
+        $method=self::$router->getMethod()."Action";
+      
+      if(method_exists($controller,$method)){  
+        $object=(new $controller)->$method(self::$request);
+      }else{
+          
+         throw new Exception("Method '.$method.' of class '.$controller.' does not exist"); 
+      } 
         
         
     }

@@ -10,6 +10,7 @@ define("VIEWS_DIR",ROOT.DS."views");
 define("CONFIG",ROOT.DS."config");
 
 require_once(CONFIG.DS."init.php");
+Session::start();
 
 
  App::run($_SERVER["REQUEST_URI"]);

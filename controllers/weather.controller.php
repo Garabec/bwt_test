@@ -7,8 +7,16 @@ class WeatherController extends Controller {
     
     public function indexAction(){
         
-      $this->data="halloo";
+     
         
+      $this->render();
+      
+    }
+    
+    
+    public function viewAction(){
+      
+      $this->data =$this->container->get('repasitory_man')->get("_weather")->parse();
       $this->render();
       
     }

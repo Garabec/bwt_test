@@ -3,7 +3,14 @@
 
 
 
+
+
+
+
+
 function autoload($classname){
+  
+  $loader = require_once VENDOR_DIR.DS.'autoload.php';
     
   $Controller_class=CONTROLLER_DIR.DS.strtolower(str_replace("Controller","",$classname)).".controller.php";  
   $lib_class=LIB_DIR.DS.strtolower($classname).".class.php"; 
@@ -19,7 +26,9 @@ function autoload($classname){
       } 
   elseif(file_exists($model_class)){
       require_once($model_class);
-  }else{
+  }elseif($loader->findFile($classname)){}
+  
+  else{
        
       throw new Exception("Failed to include class ".$classname); 
   }      
@@ -27,10 +36,11 @@ function autoload($classname){
     
 }
 
-require_once VENDOR_DIR.DS.'autoload.php';
+
 
 spl_autoload_register('autoload');
 
 
 require_once(ROOT."/config/config.php");
+
 

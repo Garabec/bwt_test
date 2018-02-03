@@ -12,6 +12,7 @@ class Controller{
           
           
           $this->router=App::$router;
+          $this->container=require(ROOT.DS.'service'.DS.'container.php');;
           
       }
       

@@ -20,6 +20,8 @@ Config::set("routers",array(
     "weather\/view"=>"weather/view",
     "weather\/message"=>"weather/message",
     "weather\/feedback"=>"weather/feedback",
+    "weather\/login"=>"weather/login",
+    "weather\/register"=>"weather/register",
 
  ));
  
@@ -28,3 +30,6 @@ Config::set("routers",array(
  Config::set("default_router","default");
  Config::set("default_controller","weather");
  Config::set("default_method","index");
+ 
+ 
+ Config::set('salt', 'hjdjkl789');

@@ -36,6 +36,25 @@ class Request{
         
     }
     
+    public function getMethod() {
+        
+        
+      return strtolower($this->server['REQUEST_METHOD']);  
+        
+        
+    }
+
+    
+    
+   public function isPost(){
+       
+       
+    return $this->getMethod()=='post' ;  
+       
+       
+       
+   }
+    
     
     
 }

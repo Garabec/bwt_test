@@ -49,8 +49,16 @@ class Controller{
           }
           
           
+          public  function redirect($location){
+            header("Location: $location");
+            } 
+          
+          
           
       }
+      
+      
+      
     
     
     

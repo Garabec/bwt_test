@@ -1,0 +1,49 @@
+
+
+    
+<div class="container"> 
+
+<?php if(Session::get('user')) { ?>
+<div class="row">
+  <div class="col-md-6">
+<form method="post">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Имя</label>
+    <input type="text" class="form-control"  name="name" placeholder="<?=$data['user']['user_name']?>" readonly >
+  </div>
+  
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Сообщение</label>
+    <textarea class="form-control" name="message" rows="10"></textarea>
+  </div>
+
+
+  
+
+<div class="row">
+  <div class="col-md-3">
+<img  src = "/captcha/captcha.php" width="120" height="40"/> 
+</div>
+<div class="col-md-4">
+<input type="text" class="form-control" name="captcha" placeholder="введите цифры">
+</div>
+
+</div><br>
+<button class="btn btn-lg btn-primary btn-block" type="submit">Отправить</button> 
+
+
+</form>
+
+</div>
+
+</div>
+
+
+<?php } else { ?>
+
+<h1> Отзывы могут оставлять только зарегистрированные пользователи</h1>
+
+<?php  }  ?>
+
+</div>

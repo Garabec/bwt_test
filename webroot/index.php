@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(E_ALL);
 define("ROOT",(dirname(__DIR__)));
 define('DS', DIRECTORY_SEPARATOR);
 define("LIB_DIR",ROOT.DS."lib");
@@ -12,5 +12,5 @@ define("CONFIG",ROOT.DS."config");
 require_once(CONFIG.DS."init.php");
 Session::start();
 
-
+//var_dump($_SESSION);
  App::run($_SERVER["REQUEST_URI"]);

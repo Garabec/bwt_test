@@ -12,5 +12,14 @@ define("CONFIG",ROOT.DS."config");
 require_once(CONFIG.DS."init.php");
 Session::start();
 
-//var_dump($_SESSION);
- App::run($_SERVER["REQUEST_URI"]);
+
+
+try {
+    
+    App::run($_SERVER["REQUEST_URI"]);
+    
+} catch (Exception $e) {
+    
+    echo 'Ошибка: ',  $e->getMessage(), "\n";
+}
+ 

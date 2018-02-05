@@ -21,12 +21,20 @@ class Controller{
           
           if(is_null($view)){
                 
-           $path=VIEWS_DIR.DS.strtolower($this->router->getController()).DS.strtolower($this->router->getMethod()).".html";    
+           $path=VIEWS_DIR.DS.strtolower($this->router->getController()).DS.strtolower($this->router->getMethod()).".html"; 
+           
+           
                 
           }else{
                 
            $path=VIEWS_DIR.DS.strtolower($this->router->getController()).DS.strtolower($view).".html";     
                 
+           }
+           
+           
+           if(!file_exists($path)){
+               
+               throw new Exeption("Error, not exists path views =".$path);
            }
            
           
@@ -38,6 +46,11 @@ class Controller{
            
            
            $layout=VIEWS_DIR.DS.Config::get("layout").".html";
+           
+           if(!file_exists($layout)){
+               
+               throw new Exeption("Error, not exists path layout =".$path);
+           }
            
            
            ob_start();

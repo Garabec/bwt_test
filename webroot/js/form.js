@@ -47,11 +47,43 @@ $("#signup_form").validate({
                     maxlength: 30,
                     regex_area:/(^[A-Za-zа-яёА-ЯЁ0-9]+[\s+]?[A-Za-zа-яёА-ЯЁ0-9\s]+?$)/
           } ,
-          category: {select: true,} 
+          message: {required: true,
+                    minlength: 3,
+                    maxlength: 30,
+                    regex:/(^[A-Za-zа-яёА-ЯЁ0-9]+[\s+]?[A-Za-zа-яёА-ЯЁ0-9\s]+?$)/
+  } 
         },
   
      
     });
+    
+    
+$("form").validate({
+    
+   
+  rules: {name: {required: true,
+                 minlength: 3,
+                 maxlength: 30,
+                 regex:/(^[A-Za-zа-яёА-ЯЁ0-9]+[\s+]?[A-Za-zа-яёА-ЯЁ0-9\s]+?$)/
+  },
+          email: {required: true,
+                      email: true
+          } ,
+          password: {required: true,
+                    minlength: 3,
+                    maxlength: 30,
+                    regex_area:/(^[A-Za-zа-яёА-ЯЁ0-9]+[\s+]?[A-Za-zа-яёА-ЯЁ0-9\s]+?$)/
+          } ,
+          message: {required: true,
+                    minlength: 3,
+                    maxlength: 30,
+                    regex:/(^[A-Za-zа-яёА-ЯЁ0-9]+[\s+]?[A-Za-zа-яёА-ЯЁ0-9\s]+?$)/
+  } 
+        },
+  
+     
+    });    
+    
   
   
  
